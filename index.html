@@ -3,11 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Title</title>
+    <title>JavaScript Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!Mu</h1>
-    <p>TESTING</p>
-    <a href="nadjkfba">Hello</a>
+
+    <h1>JavaScript Practice for Beginners</h1>
+
+    <h2>1. Variables</h2>
+    <div class="code">
+        <script>
+            let age = 25;
+            const name = "Alice";
+            var isStudent = true;
+            console.log(`Name: ${name}, Age: ${age}, Is Student: ${isStudent}`);
+        </script>
+    </div>
+
+    <h2>2. Strings</h2>
+    <div class="code">
+        <script>
+            const str = "Hello, World!";
+            console.log(str[0]); // H
+            console.log(str.length); // 13
+            console.log(str.toUpperCase()); // HELLO, WORLD!
+            console.log("String to number:", Number("123")); // 123
+            console.log("Number to string:", (123).toString()); // "123"
+        </script>
+    </div>
+
+    <h2>3. Comparison Operators</h2>
+    <div class="code">
+        <script>
+            let score = 85;
+            if (score >= 90) {
+                console.log("Grade: A");
+            } else if (score >= 80) {
+                console.log("Grade: B");
+            } else {
+                console.log("Grade: C");
+            }
+
+            // Ternary Operator
+            let eligibility = (age >= 18) ? "Eligible" : "Not Eligible";
+            console.log(eligibility); // Eligible
+        </script>
+    </div>
+
+    <h2>4. Switch Statements</h2>
+    <div class="code">
+        <script>
+            let fruit = "apple";
+            switch (fruit) {
+                case "banana":
+                    console.log("Yellow");
+                    break;
+                case "apple":
+                    console.log("Red");
+                    break;
+                default:
+                    console.log("Unknown");
+            }
+        </script>
+    </div>
+
+    <h2>5. Loops</h2>
+    <div class="code">
+        <script>
+            // While Loop
+            let count = 0;
+            while (count < 5) {
+                console.log("While Loop Count:", count);
+                count++;
+            }
+
+            // For Loop
+            for (let i = 0; i < 5; i++) {
+                console.log("For Loop Count:", i);
+            }
+
+            // Break and Continue
+            for (let i = 0; i < 10; i++) {
+                if (i === 5) {
+                    break; // Exit the loop
+                }
+                if (i % 2 === 0) {
+                    continue; // Skip even numbers
+                }
+                console.log("Odd Number:", i);
+            }
+        </script>
+    </div>
+
 </body>
 </html>
