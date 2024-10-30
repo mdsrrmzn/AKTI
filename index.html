@@ -28,10 +28,53 @@
     <div class="code">
         <script>
             let age = 25;
-            const name = "Alice";
-            var isStudent = true;
-            console.log(`Name: ${name}, Age: ${age}, Is Student: ${isStudent}`);
-        </script>
+            age = 26; // Reassigning is allowed with `let`
+            console.log(age); // Output: 26
+
+            // `var` allows reassignment and has function scope
+            var name = "Usman";
+            name = "Ali"; // Reassigning is allowed with `var`
+            console.log(name); // Output: Ali
+
+            // `const` creates a constant, which cannot be reassigned
+            const birthYear = 1995;
+            // birthYear = 2000; // This will throw an error because `const` cannot be reassigned
+            console.log(birthYear);
+
+
+            // Rules for Naming variable
+            let userName = "Hamza"; // True variable name
+            let $price = 19.99;       // True variable name
+            let _count = 10;          // True variable name
+            // let let = 5;            // Invalid, `let` is a reserved word
+
+
+            // Best Practice
+            const pi = 3.14159;
+            //pi = 4552;
+            console.log(pi);
+            let temperature = 22;
+            temperature = 25;
+            console.log(temperature);
+
+
+            // Datatype practice
+            const stringExample = "Hello, world"; // String
+            const numberExample = 42;             // Number
+            const booleanExample = true;          // Boolean
+            const nullExample = null;             // Null
+            let undefinedExample;                 // Undefined
+            const objectExample = { name: "Alice", age: 30 }; // Object
+            const symbolExample = Symbol("id");   // Symbol
+
+            console.log(typeof stringExample);     // Output: string
+            console.log(typeof numberExample);     // Output: number
+            console.log(typeof booleanExample);    // Output: boolean
+            console.log(typeof nullExample);       // Output: object (special case in JS)
+            console.log(typeof undefinedExample);  // Output: undefined
+            console.log(typeof objectExample);     // Output: object
+            console.log(typeof symbolExample);     // Output: symbol
+            </script>
     </div>
 
     <h2>2. Strings</h2>
@@ -39,10 +82,55 @@
         <script>
             const str = "Hello, World!";
             console.log(str[0]); // H
+            console.log(str[4]); //o
             console.log(str.length); // 13
             console.log(str.toUpperCase()); // HELLO, WORLD!
             console.log("String to number:", Number("123")); // 123
             console.log("Number to string:", (123).toString()); // "123"
+
+
+
+            // parseInt parseFloat practic
+            const stringNumber = "123";
+            const integerNumber = parseInt(stringNumber);   // Converts to integer
+            const floatNumber = parseFloat("123.45");       // Converts to float
+            console.log(integerNumber); // Output: 123
+            console.log(floatNumber);   // Output: 123.45
+
+            // convert number to string
+            const num = 456;
+            const strNum = num.toString();
+            console.log(typeof strNum); // Output: string
+
+            // slice() practice
+            const greeting = "Hello";
+            const sliced = greeting.slice(0, 3);
+            console.log(sliced); // Output: Hel
+
+            // substring() practice
+            const substr = greeting.substring(1, 4);
+            console.log(substr); // Output: ell
+
+            // combine two string concat()
+            let firstName = 'Mudassar';
+            let lastName = 'Ramzan';
+            let fullName = firstName.concat(" ", lastName);
+            console.log(fullName); // Output: Mudassar Ramzan
+
+            // second method using + operator
+            const welcomeMessage = "Hello, " + name + "!";
+            console.log(welcomeMessage); // Output: Hello, Ali!
+            //console.log(firstName + ' ' + lastName); // 'Mudassar Ramzan'
+
+            // trim() Removes whitespace from both ends of a string
+            const padded = "   Hello   ";
+            console.log(padded.trim()); // Output: Hello
+
+
+            //Using template literals
+            const user = "Rizwan";
+            const message = `Welcome, ${user}!`;
+            console.log(message); // Output: Welcome, Rizwan!
         </script>
     </div>
 
@@ -77,6 +165,18 @@
                     break;
                 default:
                     console.log("Unknown");
+            }
+
+            let day = "Monday";
+            switch (day) {
+            case 'Monday': 
+                console.log("Start of the week!");
+                break;
+            case 'Friday': 
+                console.log("End of the week!");
+                break;
+            default: 
+                console.log("Mid-week!");
             }
         </script>
     </div>
