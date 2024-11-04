@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5</title>
+</head>
+<body>
+    <script>
+        //1. Normal Function Declaration
+        //Definition: A normal function declaration is defined using the function keyword followed by a name, parentheses for parameters, and curly braces for the function body.
+
+        // Normal Function Declaration
+
+        function greet(name) {
+            return `Hello, ${name}!`;
+        }
+
+        console.log(greet("Alice")); // Output: Hello, Alice!
+
+
+
+        //2. Arrow Functions
+        //Definition: Arrow functions provide a shorter syntax for writing functions. They use the => syntax and do not have their own this context.
+
+
+        const greet = (name) => {
+            return `Hello, ${name}!`;
+        };
+
+        console.log(greet("Bob")); // Output: Hello, Bob!
+
+        // Shorter syntax for single expression
+        const greetShort = name => `Hello, ${name}!`;
+        console.log(greetShort("Charlie")); // Output: Hello, Charlie!
+
+
+
+
+        //3. Function inside an Object (Methods)
+        //Definition: Functions can be properties of objects, referred to as methods. They can operate on the object's data.
+
+
+        const person = {
+            name: "David",
+            greet: function() {
+                return `Hello, my name is ${this.name}.`;
+            }
+        };
+
+        console.log(person.greet()); // Output: Hello, my name is David.
+
+
+
+        //4. Function in Array
+        //Definition: Functions can also be elements within arrays. This allows you to store and manipulate functions like any other data type.
+
+
+        const operations = [
+            (x, y) => x + y,   // Addition
+            (x, y) => x - y,   // Subtraction
+            (x, y) => x * y    // Multiplication
+        ];
+
+        // Using the functions in the array
+        console.log(operations[0](5, 3)); // Output: 8 (5 + 3)
+        console.log(operations[1](5, 3)); // Output: 2 (5 - 3)
+        console.log(operations[2](5, 3)); // Output: 15 (5 * 3)
+
+    </script>
+</body>
+</html>

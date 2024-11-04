@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6</title>
+</head>
+<body>
+    <!-- 1. getElementById -->
+    <h1 id="title">Hello, World!</h1>
+    <button id="changeTitle">Change Title</button>
+
+    <!-- 2. getElementsByClassName -->
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <button id="changeBoxes">Change Boxes</button>
+
+
+    <!-- 3. querySelector -->
+    <div class="container">
+        <p class="text">This is a paragraph.</p>
+    </div>
+    <button id="changeParagraph">Change Paragraph</button>
+
+    <!-- 4(a). querySelectorAll -->
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <button id="changeItems">Change Items</button>
+
+
+    <!-- b. Introduction to Events -->
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+
+
+    <script>
+        // 1. getElementById
+        // Definition: getElementById is a method that retrieves an element from the DOM by its unique ID.
+
+        const titleElement = document.getElementById('title');
+        const button = document.getElementById('changeTitle');
+
+        button.addEventListener('click', () => {
+            titleElement.textContent = 'Title Changed!';
+        });
+
+
+        // 2. getElementsByClassName
+        // Definition: getElementsByClassName returns a live HTMLCollection of elements with the specified class name.
+
+
+        const boxes = document.getElementsByClassName('box');
+        const button = document.getElementById('changeBoxes');
+
+        button.addEventListener('click', () => {
+            for (let box of boxes) {
+                box.textContent = 'Box Changed!';
+            }
+        });
+
+
+        // 3. querySelector
+        // Definition: querySelector returns the first element that matches a specified CSS selector.
+
+
+        const paragraph = document.querySelector('.text');
+        const button = document.getElementById('changeParagraph');
+
+        button.addEventListener('click', () => {
+            paragraph.textContent = 'Paragraph Changed!';
+        });
+
+
+        //4(a). querySelectorAll
+        //Definition: querySelectorAll returns a static NodeList of all elements that match a specified CSS selector.
+
+
+        const items = document.querySelectorAll('.item');
+        const button = document.getElementById('changeItems');
+
+        button.addEventListener('click', () => {
+            items.forEach(item => {
+                item.textContent = 'Item Changed!';
+            });
+        });
+
+
+
+        //b. Introduction to Events
+        //Definition: Events are actions that occur in the browser, such as clicks, form submissions, etc. Event listeners allow us to execute code in response to these actions.
+
+        const form = document.getElementById('myForm');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevents the default form submission
+            const name = document.getElementById('name').value;
+            result.textContent = `Hello, ${name}!`;
+        });
+    </script>
+</body>
+</html>
