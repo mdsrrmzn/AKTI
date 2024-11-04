@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Intro to Arrays
+        // Push: Adds one or more elements to the end of an array.
+        // Pop: Removes the last element from an array.
+        // Shift: Removes the first element from an array.
+        // Unshift: Adds one or more elements to the beginning of an array.
+
+        // Creating an array
+        let fruits = ['Apple', 'Banana', 'Cherry'];
+
+        // Push - adding elements
+        fruits.push('Orange'); // ['Apple', 'Banana', 'Cherry', 'Orange']
+        console.log(fruits);
+
+        // Pop - removing last element
+        let lastFruit = fruits.pop(); // 'Orange'
+        console.log(fruits); // ['Apple', 'Banana', 'Cherry']
+
+        // Shift - removing first element
+        let firstFruit = fruits.shift(); // 'Apple'
+        console.log(fruits); // ['Banana', 'Cherry']
+
+        // Unshift - adding elements at the beginning
+        fruits.unshift('Mango'); // ['Mango', 'Banana', 'Cherry']
+        console.log(fruits);
+
+
+
+        //Primitive vs Non-Primitive Data Types:
+        //Primitive types (e.g., numbers, strings, booleans) hold their value directly.
+        //Non-primitive types (e.g., objects, arrays) hold a reference to their value.
+
+        // Primitive Types
+
+        let num1 = 10;
+        let num2 = num1; // num2 holds the same value as num1
+
+        console.log(num1); // Output: 10
+        console.log(num2); // Output: 10
+
+        // String
+        let str1 = 'Hello';
+        let str2 = str1; // str2 holds the same value as str1
+
+        console.log(str1); // Output: Hello
+        console.log(str2); // Output: Hello
+
+        str1 = 'World'; // Changing str1 does not affect str2
+        console.log(str1); // Output: World
+        console.log(str2); // Output: Hello
+
+        // Boolean
+        let bool1 = true;
+        let bool2 = bool1; // bool2 holds the same value as bool1
+
+        console.log(bool1); // Output: true
+        console.log(bool2); // Output: true
+
+        bool1 = false; // Changing bool1 does not affect bool2
+        console.log(bool1); // Output: false
+        console.log(bool2); // Output: true
+
+
+
+        // Non-Primitive Types
+
+        let obj1 = { name: 'Alice' };
+        let obj2 = obj1; // obj2 holds a reference to obj1
+
+        console.log(obj1.name); // Output: Alice
+        console.log(obj2.name); // Output: Alice
+
+        obj1.name = 'Bob'; // Changing obj1 affects obj2
+        console.log(obj1.name); // Output: Bob
+        console.log(obj2.name); // Output: Bob
+
+        // Array
+        let arr1 = [1, 2, 3];
+        let arr2 = arr1; // arr2 holds a reference to arr1
+
+        console.log(arr1); // Output: [1, 2, 3]
+        console.log(arr2); // Output: [1, 2, 3]
+
+        arr1.push(4); // Changing arr1 affects arr2
+        console.log(arr1); // Output: [1, 2, 3, 4]
+        console.log(arr2); // Output: [1, 2, 3, 4]
+
+        // Cloning the object and array
+        let clonedObj = { ...obj1 }; // Cloning the object
+        let clonedArr = [...arr1];    // Cloning the array
+
+        obj1.name = 'Charlie'; // Change only affects obj1
+        console.log(clonedObj.name); // Output: Bob (unchanged)
+
+        arr1.push(5); // Change only affects arr1
+        console.log(clonedArr); // Output: [1, 2, 3, 4] (unchanged)
+
+
+
+
+
+
+
+        //  Intro to Objects
+
+        let person = {
+            name: 'Alice',
+            age: 25,
+            occupation: 'Developer'
+        };
+
+        for (let key in person) {
+            console.log(`${key}: ${person[key]}`);
+        }
+
+        // Using Object.keys()
+        Object.keys(person).forEach(key => {
+            console.log(`${key}: ${person[key]}`);
+        });
+
+        //Clone Array and Object:
+        // Array: You can clone an array using the spread operator or slice().
+        // Object: You can clone an object using the spread operator or Object.assign().
+        // Cloning an array
+
+
+        let originalArray = [1, 2, 3];
+        let clonedArray = [...originalArray]; // or originalArray.slice()
+        console.log(clonedArray); // [1, 2, 3]
+
+        // Cloning an object
+        let originalObject = { a: 1, b: 2 };
+        let clonedObject = { ...originalObject }; // or Object.assign({}, originalObject)
+        console.log(clonedObject); // { a: 1, b: 2 }
+
+
+
+        //3. Array of Objects & Object Containing Array
+        //Array Containing Objects:
+
+        let employees = [
+            { name: 'Alice', position: 'Developer' },
+            { name: 'Bob', position: 'Designer' },
+            { name: 'Charlie', position: 'Manager' }
+        ];
+
+        // Accessing properties
+        employees.forEach(employee => {
+            console.log(`${employee.name} is a ${employee.position}`);
+        });
+
+
+        //Object Containing Array as a Value:
+
+        let team = {
+            name: 'Development Team',
+            members: ['Alice', 'Bob', 'Charlie']
+        };
+
+        // Accessing the array within the object
+        console.log(`Team: ${team.name}`);
+        console.log('Members:');
+        team.members.forEach(member => {
+            console.log(member);
+        });
+
+
+    </script>
+</body>
+</html>
